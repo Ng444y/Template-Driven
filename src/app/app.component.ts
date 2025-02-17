@@ -14,6 +14,9 @@ export class AppComponent {
   title = 'Template-Driven';
   anytext: string = "";
   email: string = "";  
+  phone: string = "";
+  address: string = "";
+  birthdate: string = "";
   submitted: boolean = false;
 
   onSubmit() {

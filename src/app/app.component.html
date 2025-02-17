@@ -1,14 +1,30 @@
 <form #userForm="ngForm" (ngSubmit)="onSubmit()">
-  <!-- Form controls go here -->
-  <input type="text" name="username" [(ngModel)]="anytext" required>
-  <input type="email" name="email" [(ngModel)]="email" required>
+  <div class="form-group">
+    <label for="username">USERNAME</label>
+    <input type="text" name="username" [(ngModel)]="anytext" required class="input-box">
+  </div>
+
+  <div class="form-group">
+    <label for="email">EMAIL</label>
+    <input type="email" name="email" [(ngModel)]="email" required class="input-box">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">PHONE NUMBER</label>
+    <input type="tel" name="phone" [(ngModel)]="phone" class="input-box">
+  </div>
+
+  <div class="form-group">
+    <label for="address">ADDRESS</label>
+    <input type="text" name="address" [(ngModel)]="address" class="input-box">
+  </div>
+
+  <div class="form-group">
+    <label for="birthdate">BIRTHDATE</label>
+    <input type="date" name="birthdate" [(ngModel)]="birthdate" class="input-box">
+  </div>
+
+  <button class="btn" type="submit" [disabled]="!anytext">Submit</button>
 </form>
 
-<div> 
-  <form (ngSubmit)="onSubmit()">
-    <input class="input-box" type="text" name="userInput" [(ngModel)]="anytext" placeholder="Input any text" required>
-    <button class="btn" type="submit" [disabled]="!anytext">Submit</button>
-  </form>
-</div>
-
-<p *ngIf="submitted"> You Have Entered: {{ anytext }} </p>
+<p *ngIf="submitted">You Have Entered: <br> Username: {{ anytext }} <br> Email: {{ email }} <br> Phone: {{ phone }} <br> Address: {{ address }} <br> Birthdate: {{ birthdate }}</p>
