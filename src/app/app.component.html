@@ -1,0 +1,14 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <!-- Form controls go here -->
+  <input type="text" name="username" [(ngModel)]="anytext" required>
+  <input type="email" name="email" [(ngModel)]="email" required>
+</form>
+
+<div> 
+  <form (ngSubmit)="onSubmit()">
+    <input class="input-box" type="text" name="userInput" [(ngModel)]="anytext" placeholder="Input any text" required>
+    <button class="btn" type="submit" [disabled]="!anytext">Submit</button>
+  </form>
+</div>
+
+<p *ngIf="submitted"> You Have Entered: {{ anytext }} </p>
